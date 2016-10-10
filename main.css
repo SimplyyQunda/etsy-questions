@@ -1,0 +1,35 @@
+.title{
+	font-size: 30px;
+	padding-left: 25px;
+
+
+}
+.banner{
+	height: 130px;
+	padding-top: 15px;
+
+}
+.question{
+	margin-top: 0px;
+	font-size: 35px;
+	text-align: center;
+	color: grey;
+
+}
+
+.body {
+	background-color: lightgrey;
+	width: 1105px;
+ 	height: 1800px;
+ 	text-align: center;
+}
+.box{
+	width: 1105px;
+	height: 150px;
+	background-color: grey;
+	color: lightgrey;
+	text-align: center;
+
+
+}
+
