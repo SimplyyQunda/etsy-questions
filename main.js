@@ -28,7 +28,7 @@ var allPrices = getPrice(items)
 var result = sum(allPrices)
 // console.log(result/items.length)
 // console.log(getPrice(items))
-answer1.innerHTML = result/items.length;
+answer1.innerHTML = "<p>" + result/items.length+ ' ' + ' ' + "</p>";
 
 // getPrice(items);
 
