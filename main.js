@@ -52,7 +52,9 @@ var getItemsPrice = function (items) {
 var answer2 = document.getElementById("answer2");
 var midPriceItems = getItemsPrice(items);
 
-answer2.innerHTML += getItemsPrice (items);
+// var pricesArray = getItemsPrice(items);
+// 	madeOfWoodArray.forEach(function(items){
+answer2.innerHTML += "<p>" + getItemsPrice (items)+ "</p>";
 
 
 //Question 3
@@ -75,49 +77,20 @@ var gbpcode = function(items){
 answer3.innerHTML += gbpcode (items);
 
 //Question 4
-var answer1 = document.getElementById("answer4")
-
-
-
-var madeofWood = function(items){
-	var listofWood = [];
-	for(var count = 0; count < items.length; count++){
-		var listtype = items[count].materials;
-		if(listtype === "wood"){
-			
-			listofWood.push(items[count].title);
-		};
-	};
-	return listofWood;
-	console.log(listofWood)
-};
-
-answer2.innerHTML += madeofWood (items);
-
-//Question 5
-
-var eight = items.filter(function(objects){
-	return objects.materials.length > 8;
+var wood = items.filter(function(objects) {
+	return (objects.materials.includes ("answer4"));
 });
 
- // for( count = 0; count < eight.length; count++){
-	// answer5.innerHTML +=  "<p>"+ eight[count].title +"</p>";
 
+var answer4 = document.getElementById("answer4")
 
-	//Question 6
-
-	var sellers = items.filter(function(objects){
-		return objects.who_made === "i_did";
-	})
-// var answer6 = document.getElementById("answer6");
-// answer5.innerHTML = sellers.length;
 
 
 var madeofWood = function(items){
 	var listofWood = [];
 	for(var count = 0; count < items.length; count++){
 		var listtype = items[count].materials;
-		if(listtype === "wood"){
+		if(listtype.includes("wood")){
 			
 			listofWood.push(items[count].title);
 		};
@@ -125,6 +98,51 @@ var madeofWood = function(items){
 	return listofWood;
 	console.log(listofWood)
 };
+
+// answer4.innerHTML += "<p>" + madeofWood (items) + "</p>";
+
+
+var madeOfWoodArray = madeofWood(items);
+	madeOfWoodArray.forEach(function(title){
+	answer4.innerHTML += "<p>" + title + "</p>"
+})
+ //Question 5
+
+ var eight = items.filter(function(objects){
+	return (objects.materials.length > 8)
+});
+
+for( count = 0; count < eight.length; count++){
+answer5.innerHTML +=  "<p>"+ eight[count].title +"</p>";
+};
+
+//Question 6
+
+var madeBySellers = items.filter(function(objects){
+ return (objects.who_made === "i_did")
+});
+var answer6 = document.getElementById ("answer6");
+answer6.innerHTML = madeBySellers.length + ' ' + "were made by their sellers";
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	
