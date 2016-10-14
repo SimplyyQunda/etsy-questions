@@ -113,7 +113,8 @@ var madeOfWoodArray = madeofWood(items);
 });
 
 for( count = 0; count < eight.length; count++){
-answer5.innerHTML +=  "<p>"+ eight[count].title +"</p>";
+	var mats = eight[count].materials
+answer5.innerHTML +=  "<p>"+ eight[count].title + " has " +  mats.length + " materials " + mats.join("<br>")  + "</p>";
 };
 
 //Question 6
